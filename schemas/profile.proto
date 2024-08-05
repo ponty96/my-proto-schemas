@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package ayoprotoschemas;
+
+import "address.proto";
+
+message Profile {
+    string firstname = 1;
+    string lastname = 2;
+    string email = 3;
+    string phone = 4;
+    Address address = 5;
+    string company = 9;
+}
