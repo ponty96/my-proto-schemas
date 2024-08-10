@@ -3,12 +3,12 @@ GO_IMAGE_TAG=go_build
 # Go
 # --------------------
 
-build-container/go:
+build-container:
 	docker build \
 		-t $(GO_IMAGE_TAG):latest \
 		.
 
-build-all-local/go: build-container/go
+build: build-container
 	cd ..
 	# Local cleanup
 	rm -rf build output

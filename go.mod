@@ -1,4 +1,4 @@
-module ponty.me/my-proto-schemas
+module my-proto-schemas
 
 go 1.22.3
 
