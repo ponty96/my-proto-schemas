@@ -1,4 +1,4 @@
-module my-proto-schemas
+module github.com/ponty96/my-proto-schemas
 
 go 1.22.3
 
