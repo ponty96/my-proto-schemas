@@ -4,9 +4,13 @@ package ayoprotoschemas;
 
 import "google/protobuf/timestamp.proto";
 import "address.proto";
+import "meta.proto";
 
 // Top-level Order message
 message Order {
+  option(meta.msg_type) = "entity";
+  option(meta.msg_routing_key) = "orders";
+  option(meta.msg_exchange) = "events";
   // Unique identifier of the order
   string order_id = 1;
 

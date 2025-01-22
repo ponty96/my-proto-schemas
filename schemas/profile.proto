@@ -3,8 +3,14 @@ syntax = "proto3";
 package ayoprotoschemas;
 
 import "address.proto";
+import "meta.proto";
 
 message Profile {
+
+    option(meta.msg_type) = "entity";
+    option(meta.msg_routing_key) = "profiles";
+    option(meta.msg_exchange) = "events";
+
     string firstname = 1;
     string lastname = 2;
     string email = 3;

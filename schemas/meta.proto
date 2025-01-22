@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "google/protobuf/descriptor.proto";
+
+package meta;
+
+extend google.protobuf.MessageOptions {
+  string msg_type = 51200;  // Choose a unique number
+  string msg_routing_key = 51201;
+  string msg_exchange = 51203;
+}
