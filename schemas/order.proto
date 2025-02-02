@@ -5,6 +5,7 @@ package ayoprotoschemas;
 import "google/protobuf/timestamp.proto";
 import "address.proto";
 import "meta.proto";
+import "validate/validate.proto";
 
 // Top-level Order message
 message Order {
@@ -31,6 +32,11 @@ message Order {
 
   // Current status of the order
   OrderStatus status = 7;
+
+  // String-based status field with validation
+  string order_status = 10 [(validate.rules).string = {
+    in: ["PENDING", "SHIPPED", "DELIVERED", "CANCELLED"]
+  }];
 
   // Timestamps
   google.protobuf.Timestamp created_at = 8;

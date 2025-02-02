@@ -8,10 +8,14 @@ RUN apk update && \
     apk --no-cache --update add protobuf-dev openssh
 
 RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
+RUN go install github.com/envoyproxy/protoc-gen-validate@latest
 
 # (Optional) Confirm protoc and the well-known types are installed:
 RUN protoc --version
 RUN ls -l /usr/include/google/protobuf/
+
+RUN git clone https://github.com/envoyproxy/protoc-gen-validate.git /proto-validate && \
+    cp -r /proto-validate/validate /usr/include/
 
 ADD . .
 

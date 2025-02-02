@@ -3,6 +3,8 @@ module github.com/ponty96/my-proto-schemas
 go 1.22.3
 
 require (
-	github.com/golang/protobuf v1.5.4 // indirect
-	google.golang.org/protobuf v1.34.2 // indirect
+	github.com/envoyproxy/protoc-gen-validate v1.2.1
+	google.golang.org/protobuf v1.36.3
 )
+
+require github.com/google/go-cmp v0.6.0 // indirect

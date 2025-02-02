@@ -32,7 +32,7 @@ function build {
 
 	for file in `find . -name "*.proto"`; do
 	    echo "Compiling $file"
-		protoc --go_out="./proto_out" $INCLUDES -I /usr/include  $file
+		protoc --go_out="./proto_out" --validate_out="lang=go:./proto_out" $INCLUDES -I /usr/include  $file
 	done
 
 	cd "${OUTPUT_DIR}"
