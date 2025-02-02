@@ -159,7 +159,7 @@ func (m *Order) validate(all bool) error {
 	if _, ok := _Order_OrderStatus_InLookup[m.GetOrderStatus()]; !ok {
 		err := OrderValidationError{
 			field:  "OrderStatus",
-			reason: "value must be in list [PENDING SHIPPED DELIVERED CANCELLED]",
+			reason: "value must be in list [pending shipped delivered cancelled]",
 		}
 		if !all {
 			return err
@@ -303,10 +303,10 @@ var _ interface {
 } = OrderValidationError{}
 
 var _Order_OrderStatus_InLookup = map[string]struct{}{
-	"PENDING":   {},
-	"SHIPPED":   {},
-	"DELIVERED": {},
-	"CANCELLED": {},
+	"pending":   {},
+	"shipped":   {},
+	"delivered": {},
+	"cancelled": {},
 }
 
 // Validate checks the field values on OrderItem with the rules defined in the

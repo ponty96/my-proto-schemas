@@ -35,7 +35,7 @@ message Order {
 
   // String-based status field with validation
   string order_status = 10 [(validate.rules).string = {
-    in: ["PENDING", "SHIPPED", "DELIVERED", "CANCELLED"]
+    in: ["pending", "shipped", "delivered", "cancelled"]
   }];
 
   // Timestamps
